@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import type { User } from '../types/schema';
 import { supabase } from '../lib/supabase';
-import { getUserByEmail, getUserById, createUser } from '../services/db';
+import { getUserById } from '../services/db';
 
 interface AuthContextType {
     user: User | null;
@@ -48,7 +48,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         return () => subscription.unsubscribe();
     }, []);
 
-    const handleUserSession = async (email: string, id: string) => {
+    const handleUserSession = async (_email: string, id: string) => {
         try {
             // Check by ID (Primary Key)
             // The DB Trigger 'on_auth_user_created' in Supabase handles the INSERT now.
