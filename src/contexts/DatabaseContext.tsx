@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useEffect, useState } from 'react';
+import React, { createContext, useContext } from 'react';
 
 // Simplified Context for LocalStorage mode
 interface DatabaseContextType {
