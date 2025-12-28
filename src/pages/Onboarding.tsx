@@ -157,6 +157,12 @@ const Onboarding: React.FC = () => {
                                 </div>
                             </div>
 
+                            {errorMsg && (
+                                <div className="text-red-500 text-sm text-center bg-red-500/10 p-2 rounded">
+                                    {errorMsg}
+                                </div>
+                            )}
+
                             <button
                                 className="btn w-full flex items-center justify-center mt-8 py-3 text-lg"
                                 onClick={handleNext}
